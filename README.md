@@ -17,4 +17,4 @@ cmake --build .
 would compile the progrem
 
 ## Run this program
-.\Debug\replication_checker.exe user kaifan replication database host host.postgres.database.azure.com dbname test1 password LongPassword
+.\Debug\replication_checker.exe user username replication database host host.postgres.database.azure.com dbname test1 password LongPassword
