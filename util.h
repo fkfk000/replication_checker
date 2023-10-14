@@ -8,6 +8,7 @@
 #include <bit>
 #include <vector>
 #include <iostream>
+#include <cstring>
 
 using XLogRecPtr = std::uint64_t;
 using Xid = std::int32_t;
