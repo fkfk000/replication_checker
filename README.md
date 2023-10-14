@@ -18,3 +18,8 @@ would compile the progrem
 
 ## Run this program
 .\Debug\replication_checker.exe user username replication database host host.postgres.database.azure.com dbname test1 password LongPassword
+
+
+## docker run
+
+docker run --name pg-replica-checker -e PubName=pub -e SlotName=sub -it dog830228/replica-pg:0.2 /replication_checker/build/replication_checker user postgres replication database host localhost dbname postgres password test.123
