@@ -189,6 +189,7 @@ void PostgresServer::setSlotandStartReplication(std::string slotName, std::strin
         // std::cout << "到这里了\n";
         // std::cout << "开始checkdata数据\n";
         checkWALData(&copyBuf[head_len], remaining_head);
+        sendFeedback();
         PQfreemem(copyBuf);
         copyBuf = nullptr;
     }
@@ -247,6 +248,10 @@ void PostgresServer::checkFeedback()
 void PostgresServer::process_keepalived_message()
 {
     // std::cout << "开始收到keep alived数据\n";
+    int pos = 1; // for 'k'
+    auto log_pos = buf_recev<XLogRecPtr> (&copyBuf[pos]);
+    received_lsn = std::max(received_lsn, log_pos);
+    sendFeedback();
     PQfreemem(copyBuf);
     copyBuf = nullptr;
 }
