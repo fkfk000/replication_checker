@@ -113,10 +113,11 @@ void PostgresServer::identifySystem()
         std::cout << PQerrorMessage(conn.get());
         std::exit(-2);
     }
-    /*int nFields = PQnfields(res.get());
+
+   /* int nFields = PQnfields(res.get());
     int nTuples = PQntuples(res.get());
-    std::cout << "IDENTIFY_SYSTEM 应该返回一行，我们收到了 " << nTuples << " 行" << std::endl;
-    std::cout << "有" << nFields << "列" << std::endl;
+    std::cout << " IDENTIFY_SYSTEM get " << nTuples << " row " << std::endl;
+    std::cout << " has " << nFields << " row " << std::endl;
     for (int i = 0; i < nFields; i++)
     {
         std::cout << PQgetvalue(res.get(), 0, i) << "\n";

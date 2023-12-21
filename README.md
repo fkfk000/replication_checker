@@ -50,6 +50,17 @@ Then, in replication_checker we could have:
 ![image](https://github.com/fkfk000/replication_checker/assets/14956155/96ef0414-dff8-4ab4-b28f-643c4bf63b33)
 
 
+## docker run
+
+```
+docker run -e PubName=pub -e SlotName=sub -it dog830228/replica-pg:0.5  user postgres replication database host localhost dbname postgres password test.123
+```
+
+
+
+
+
+
 
 
 
